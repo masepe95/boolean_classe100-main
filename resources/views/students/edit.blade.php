@@ -5,6 +5,16 @@
 
         <h2 class="mb-3">Update Student</h2>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form method="POST" action="{{ route('students.update', $student->id) }}">
             @csrf
             @method('PUT')
@@ -12,15 +22,15 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name"
-                            value="{{ $student->name }}">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                            name="name" value="{{ $student->name }}">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="surname" class="form-label">Surname</label>
-                        <input type="text" class="form-control" id="surname" name="surname"
-                            value="{{ $student->surname }}">
+                        <input type="text" class="form-control @error('surname') is-invalid @enderror" id="surname"
+                            name="surname" value="{{ $student->surname }}">
                     </div>
                 </div>
                 <div class="col-12">

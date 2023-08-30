@@ -31,11 +31,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'name' => 'required|string',
+                'surname' => 'required|string|',
+            ],
+            // errori
+            [
+                'name.required' => 'Name is required',
+                'name.string' => 'Name is invalid',
+                'surname.required' => 'Surame is required',
+                'surname.string' => 'Surname is invalid',
+            ]
+        );
+
         $data = $request->all();
         $student = new Student();
-        // $student->fill($data);
-        $student->name = $data['name'];
-        $student->surname = $data['surname'];
+        $student->fill($data);
         $student->save();
 
 
@@ -63,6 +76,20 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
+
+        $request->validate(
+            [
+                'name' => 'required|string',
+                'surname' => 'required|string|',
+            ],
+            // errori
+            [
+                'name.required' => 'Name is required',
+                'name.string' => 'Name is invalid',
+                'surname.required' => 'Surame is required',
+                'surname.string' => 'Surname is invalid',
+            ]
+        );
         $data = $request->all();
 
 
