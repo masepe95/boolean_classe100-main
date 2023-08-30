@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 
- @section('main')
-<div class="container">
+@section('main')
+    <div class="container">
 
    <a href="" class="btn btn-success mt-5">Create</a>
     <table class="table mt-5">
@@ -23,8 +23,8 @@
               <td>{{$student['surname']}}</td>
               <td>100</td>
               <td class="d-flex">
-                  <a href="" class="btn btn-primary me-1">View</a>
-                  <a href="" class="btn btn-warning me-1">Edit</a>
+                   <a href="" class="btn btn-primary me-1">View</a>
+                        <a href="{{ route('students.edit', $student) }}" class="btn btn-warning me-1">Edit</a>
                   <form action="" method="POST">
                       <button href="" class="btn btn-danger">Delete</button>
                   </form>
@@ -37,6 +37,6 @@
         </tbody>
       </table>
 
-</div>
 
+    </div>
 @endsection

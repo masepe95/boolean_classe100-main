@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -43,9 +44,9 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
