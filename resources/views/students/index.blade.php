@@ -39,7 +39,7 @@
                         <td>{{ $student['surname'] }}</td>
                         <td>100</td>
                         <td class="d-flex">
-                            <a href="" class="btn btn-primary me-1">View</a>
+                            <a href="{{ route('students.show', $student) }}" class="btn btn-primary me-1">View</a>
                             <a href="{{ route('students.edit', $student) }}" class="btn btn-warning me-1">Edit</a>
                             {{-- Delete Button --}}
                             <form action="{{ route('students.destroy', $student) }}" method="POST">
