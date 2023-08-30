@@ -24,8 +24,10 @@
             <td class="d-flex">
                 <a href="" class="btn btn-primary me-1">View</a>
                 <a href="" class="btn btn-warning me-1">Edit</a>
-                <form action="" method="POST">
-                    <button href="" class="btn btn-danger">Delete</button>
+                <form action="{{ route('students.destroy', $student) }}" method="POST" id="delete-form">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
           </tr>
