@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -28,7 +29,13 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $student = new Student();
+        $student->fill($data);
+        $student->save();
+
+
+        return to_route('students.index');
     }
 
     /**
