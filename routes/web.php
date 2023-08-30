@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+
+Route::delete('students/{student}', 'StudentController@destroy')->name('students.destroy');
