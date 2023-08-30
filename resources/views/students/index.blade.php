@@ -4,7 +4,7 @@
 @section('main')
     <div class="container">
 
-   <a href="" class="btn btn-success mt-5">Create</a>
+   <a href="{{route('students.create')}}" class="btn btn-success mt-5">Create</a>
     <table class="table mt-5">
         <thead>
           <tr>
