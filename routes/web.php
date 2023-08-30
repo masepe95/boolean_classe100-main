@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+
+// Mostra il dettaglio di uno studente:
+// Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
