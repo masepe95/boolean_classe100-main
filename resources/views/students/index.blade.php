@@ -22,7 +22,7 @@
                     <td></td>
                     <td></td>
                     <td class="d-flex">
-                        <a href="#" class="btn btn-primary me-1">View</a>
+                        <a href="{{ route('students.show', $student->id) }}" class="btn btn-primary me-1">View</a>
                         <a href="" class="btn btn-warning me-1">Edit</a>
                         <form action="" method="POST">
                             <button href="" class="btn btn-danger">Delete</button>
