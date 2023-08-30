@@ -27,7 +27,7 @@
                    <a href="" class="btn btn-primary me-1">View</a>
                         <a href="{{ route('students.edit', $student) }}" class="btn btn-warning me-1">Edit</a>
                      {{-- Delete Button --}}
-                <form action="{{ route('students.destroy', $student) }}" method="POST">
+                <form id="delete-form" action="{{ route('students.destroy', $student) }}" method="POST">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Delete</button>
@@ -43,4 +43,12 @@
       </table>
 
     </div>
+    <script>
+        const deleteForm = document.getElementById('delete-form');
+        deleteForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const hasConfirmed = confirm('Are you sure you want to delete this student?');
+            if (hasConfirmed) deleteForm.submit()
+        })
+    </script>
 @endsection
