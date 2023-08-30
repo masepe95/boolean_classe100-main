@@ -35,6 +35,7 @@
             @empty
                 <h3>No Students Available</h3>
             @endforelse
+
         </tbody>
       </table>
 
