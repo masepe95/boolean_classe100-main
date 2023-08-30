@@ -3,7 +3,8 @@
 
 @section('main')
     <div class="container-md">
-        <nav class="navbar navbar-expand-lg bg-light">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-light rounded-3">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img class="img-fluid"
                         src="https://yt3.googleusercontent.com/UXFC9eFKxjbOcUeEiIFqpywdInXJijIrh5bkfUMPlKhCLKaO6rrTfh5O5IzNTS_2Wap2yBk1J44=s900-c-k-c0x00ffffff-no-rj"
@@ -25,6 +26,14 @@
                 </div>
             </div>
         </nav>
+        <!--MAIN-CONTENT-->
+        <main class="home_content bg-light pb-3">
+            <h1 class="text-center pt-3 fw-bold">WELCOME!</h1>
+            <img class="flex-start" src="https://cdn.pixabay.com/photo/2013/07/12/18/03/pointer-152868_1280.png"
+                alt="content">
+            <h2 class="ps-3 d-inline fw-bold">Come and discover our students!</h2>
+        </main>
+
 
     </div>
 @endsection
