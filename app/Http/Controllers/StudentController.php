@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -12,7 +13,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('students.index');
+        $students = Student::all();
+        return view('students.index', compact('students'));
     }
 
     /**
@@ -20,7 +22,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('students.create');
     }
 
     /**
@@ -28,7 +31,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $student = new Student();
+        // $student->fill($data);
+        $student->name = $data['name'];
+        $student->surname = $data['surname'];
+        $student->save();
+
+
+        return to_route('students.index');
     }
 
     /**
@@ -42,9 +53,9 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
