@@ -4,16 +4,23 @@
 @section('main')
     <div class="container mt-5">
 
+        {{-- Index Controls --}}
         <div class="d-flex justify-content-between align-items-center mb-5">
+
+            {{-- Create --}}
             <a href="{{ route('students.create') }}" class="btn btn-success">Create</a>
+
+            {{-- Search Form --}}
             <form method="GET" action="">
                 <div class="input-group">
                     <input type="text" class="form-control" name="filter" placeholder="Name..." aria-label="Filter"
                         value="{{ $filter ?? '' }}">
-                    <button type="submit" class="btn btn-outline-secondary" type="button">Search</button>
+                    <button type="submit" class="btn btn-outline-success" type="button">Search</button>
                 </div>
             </form>
         </div>
+
+        {{-- Students Table --}}
         <table class="table">
             <thead>
                 <tr>
