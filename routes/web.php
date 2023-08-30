@@ -20,6 +20,29 @@ Route::get('/', function () {
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // edit form route
 Route::get('/students/{student}/edit', [studentController::class, 'edit'])->name('students.edit');
 // update route
